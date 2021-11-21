@@ -1,0 +1,36 @@
+.accordion_header {
+  width: 100%;
+  padding: 1em 0;
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  font-size: 17px;
+  font-weight: bold;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+}
+
+.accordion_header > .icon {
+  transition: transform 300ms ease both;
+}
+
+.accordion_header[aria-expanded="true"] > .icon {
+  transform: rotate(180deg);
+}
+
+.accordion_content {
+  padding-bottom: 1.5em;
+  animation: showContent 300ms;
+}
+
+@keyframes showContent {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
